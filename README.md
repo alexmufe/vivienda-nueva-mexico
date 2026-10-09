@@ -2,20 +2,22 @@
 
 ## Pregunta
 
-¿Cómo cambiaron entre 2020 y mayo de 2026 el acceso al crédito para vivienda nueva, sus montos y la oferta habitacional? El notebook compara los indicadores publicados con los que se obtienen de los microdatos, sin cambiar la metodología del análisis.
+¿Quién dejó de poder estrenar casa en México y por qué? El análisis compara los créditos de vivienda nueva, su monto promedio, la distribución por ingreso y la oferta registrada.
 
 ## Fuentes de datos
 
-Los CSV de financiamientos y oferta se distribuyen en `data/raw/`; la fuente declarada es el [Sistema Nacional de Información e Indicadores de Vivienda (SNIIV)](https://sniiv.sedatu.gob.mx/), sección de datos abiertos. El INPC (`inpc.csv`) corresponde a una exportación del [Banco de Información Económica de INEGI](https://www.inegi.org.mx/app/indicadores/). Consulta y descarga de las copias incluidas: 9 de octubre de 2026. Los 15 archivos se conservan tal como se recibieron; cada uno pesa menos de 50 MB. Para valores de precios de vivienda SHF y costos de construcción publicados por terceros, véanse las referencias y límites indicados en el notebook: esas series no se vuelven a estimar aquí.
+Los registros de financiamientos y oferta provienen de los [datos abiertos del SNIIV](https://sniiv.sedatu.gob.mx/Reporte/Datos_abiertos); `inpc.csv` es la serie del [INPC de INEGI](https://www.inegi.org.mx/temas/inpc/). Las copias de los 15 archivos incluidos se consultaron el 9 de octubre de 2026 y se guardan en `data/raw/`; todos pesan menos de 50 MB. Los precios por segmento de vivienda se citan a partir de los boletines de [SHF](https://www.gob.mx/shf), y los costos de construcción a partir de [CEICO-CMIC](https://www.cmic.org.mx/ceico/); esas series externas no se calculan en este notebook.
 
 ## Cómo reproducirlo
 
-Clona `https://github.com/alexmufe/vivienda-nueva-mexico.git`, entra al directorio, crea un entorno de Python e instala `requirements.txt` con `python -m pip install -r requirements.txt`. Ejecuta todas las celdas de [`notebooks/vivienda_nueva.ipynb`](notebooks/vivienda_nueva.ipynb) desde Jupyter/VS Code, o desde la raíz del proyecto con `python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/vivienda_nueva.ipynb`. Los datos ya están incluidos y el notebook falla explícitamente si falta un archivo requerido; no necesita credenciales, Drive ni descarga.
+Clona `https://github.com/alexmufe/vivienda-nueva-mexico.git`, instala las versiones fijadas con `python -m pip install -r requirements.txt` y ejecuta todas las celdas de [`notebooks/vivienda_nueva.ipynb`](notebooks/vivienda_nueva.ipynb). También puedes correr desde la raíz `python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/vivienda_nueva.ipynb`. Los datos ya están incluidos; no se requiere descarga externa.
 
 ## Qué produce
 
-El notebook presenta tablas y gráficas sobre los créditos, el monto promedio, los rangos de ingreso y la oferta, y compara cada indicador publicado con el cálculo. Con las copias incluidas reproduce, entre otras cifras, un monto promedio de $745,199 en 2020 y $1,188,061 en 2026 (+59% nominal), el INPC +37%, el índice de créditos en 88.2 (2020 = 100), la participación del rango de ingreso más bajo de 15.9% a 7.4% y 60,627 frente a 85,718 créditos de vivienda usada en enero-mayo.
+El crédito promedio pasó de $745 mil en 2020 a $1.188 millones en 2026 (+59%), frente a un aumento de 37% del INPC; descontada la inflación, el monto aumentó 16%. El índice de créditos otorgados quedó en 88.2 (2020 = 100). La participación del rango de ingreso más bajo bajó de 15.9% en 2020 a 7.4% en 2026, después de llegar a 17.5% en 2022. Los créditos para vivienda usada subieron de 60,627 a 85,718 entre enero y mayo. El notebook muestra las comparaciones y genera la [gráfica del crédito e inflación](docs/figuras/grafica_1_credito_inflacion.png).
 
 ## Límites
 
-El corte de 2026 llega a mayo; no equivale a un año completo. Los datos y registros publicados por SNIIV pueden cambiar de versión, y la oferta es un inventario mensual, no un flujo que se deba sumar. El notebook compara las copias versionadas de este repositorio, no reproduce las publicaciones externas de SHF ni las series de costos de construcción que cita la nota. No se incluye un PDF del documento principal.
+El monto promedio del crédito no es el precio de la vivienda: también depende del enganche, de la institución y de quién califica. La caída de los créditos al rango de ingreso más bajo puede reflejar menor acceso o cambios en el registro del ingreso. El ejercicio describe el acceso a vivienda nueva, no una escasez general: el documento estima que 96% del déficit habitacional corresponde a viviendas existentes con carencias y 4% a necesidad de vivienda nueva. La serie de oferta cambia de clasificación en 2024; para la comparación por segmento, el documento empieza en 2025. Haría falta observar precios de venta por segmento frente al ingreso de los hogares para determinar a quién le alcanza.
+
+**Documento completo:** [Análisis sobre vivienda nueva](docs/Vivienda_nueva_AlejandroMunoz.md).
