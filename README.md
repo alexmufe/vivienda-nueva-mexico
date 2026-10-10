@@ -6,7 +6,7 @@
 
 ## Fuentes de datos
 
-Los registros de financiamientos y oferta provienen de los [datos abiertos del SNIIV](https://sniiv.sedatu.gob.mx/Reporte/Datos_abiertos); `inpc.csv` es la serie del [INPC de INEGI](https://www.inegi.org.mx/temas/inpc/). Las copias de los 15 archivos incluidos se consultaron el 9 de octubre de 2026 y se guardan en `data/raw/`; todos pesan menos de 50 MB. Los precios por segmento de vivienda se citan a partir de los boletines de [SHF](https://www.gob.mx/shf), y los costos de construcción a partir de [CEICO-CMIC](https://www.cmic.org.mx/ceico/); esas series externas no se calculan en este notebook.
+Los registros de financiamientos y oferta provienen de los [datos abiertos del SNIIV](https://sniiv.sedatu.gob.mx/Reporte/Datos_abiertos); `inpc.csv` es la serie del [INPC de INEGI](https://www.inegi.org.mx/temas/inpc/). Las copias de los 15 archivos incluidos se consultaron el 9 de octubre de 2026 y se guardan en `data/raw/`; todos pesan menos de 50 MB. Los precios por segmento de vivienda se citan a partir de los boletines de [SHF](https://www.gob.mx/shf), y los costos de construcción a partir de [CEICO-CMIC](https://www.cmic.org.mx/ceico/); esas cifras se identifican como fuente externa, no calculada en el notebook.
 
 ## Cómo reproducirlo
 
@@ -18,6 +18,8 @@ El crédito promedio pasó de $745 mil en 2020 a $1.188 millones en 2026 (+59%),
 
 ## Límites
 
-El monto promedio del crédito no es el precio de la vivienda: también depende del enganche, de la institución y de quién califica. La caída de los créditos al rango de ingreso más bajo puede reflejar menor acceso o cambios en el registro del ingreso. El ejercicio describe el acceso a vivienda nueva, no una escasez general: el documento estima que 96% del déficit habitacional corresponde a viviendas existentes con carencias y 4% a necesidad de vivienda nueva. La serie de oferta cambia de clasificación en 2024; para la comparación por segmento, el documento empieza en 2025. Haría falta observar precios de venta por segmento frente al ingreso de los hogares para determinar a quién le alcanza.
+El monto promedio del crédito no es el precio de la vivienda: también depende del enganche, de la institución y de quién califica. La caída de los créditos al rango de ingreso más bajo puede reflejar menor acceso o cambios en el registro del ingreso. El ejercicio describe el acceso a vivienda nueva, no una escasez general: el documento cita que 96% del déficit habitacional corresponde a viviendas existentes con carencias y 4% a necesidad de vivienda nueva; es una cifra de fuente externa, no calculada en el notebook. La serie de oferta cambia de clasificación en 2024; para la comparación por segmento, el documento empieza en 2025. Haría falta observar precios de venta por segmento frente al ingreso de los hogares para determinar a quién le alcanza.
 
 **Documento completo:** [Análisis sobre vivienda nueva](docs/Vivienda_nueva_AlejandroMunoz.md).
+
+El código de este repositorio se distribuye bajo la licencia MIT (véase [LICENSE](LICENSE)). Los datos son de sus fuentes oficiales y conservan sus propios términos de uso.

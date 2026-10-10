@@ -1,4 +1,11 @@
 .venv/
+.vscode/
 __pycache__/
 .ipynb_checkpoints/
+.DS_Store
 *.py[cod]
+*.docx
+*.tmp
+*.bak
+*borrador*
+*draft*
