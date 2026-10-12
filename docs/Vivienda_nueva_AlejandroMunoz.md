@@ -22,7 +22,10 @@ Desde 2021 el **monto del crédito no sigue la misma tendencia de la inflación*
 
 **Gráfica 1. El crédito para estrenar casa creció más rápido que la inflación, y se otorgan menos**
 
-![Gráfica 1. El crédito para estrenar casa creció más rápido que la inflación, y se otorgan menos](figuras/grafica_1_credito_inflacion.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="figuras/grafica_1_credito_inflacion_dark.png">
+  <img alt="Gráfica 1. El crédito para estrenar casa creció más rápido que la inflación, y se otorgan menos" src="figuras/grafica_1_credito_inflacion.png">
+</picture>
 
 Fuente: SNIIV (Conavi-Sedatu), registro de financiamientos, créditos de adquisición de vivienda nueva, e INPC (INEGI). Cálculos propios.
 

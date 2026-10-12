@@ -6,7 +6,10 @@
 
 Entre 2020 y 2026, el crédito promedio subió de $745 mil a $1.188 millones (+59%), mientras el INPC aumentó 37%; el índice de créditos otorgados quedó en 88.2 y la participación del rango de ingreso más bajo bajó de 15.9% a 7.4%. Los créditos para vivienda usada pasaron de 60,627 a 85,718 entre enero y mayo.
 
-![Gráfica 1. El crédito para estrenar casa creció más rápido que la inflación, y se otorgan menos](docs/figuras/grafica_1_credito_inflacion.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figuras/grafica_1_credito_inflacion_dark.png">
+  <img alt="Gráfica 1. El crédito para estrenar casa creció más rápido que la inflación, y se otorgan menos" src="docs/figuras/grafica_1_credito_inflacion.png">
+</picture>
 
 [Documento completo](docs/Vivienda_nueva_AlejandroMunoz.md)
 
@@ -21,5 +24,9 @@ El promedio del crédito no es el precio de la vivienda: también depende del en
 ## Código
 
 [Notebook](notebooks/vivienda_nueva.ipynb)
+
 Los datos están incluidos; el notebook corre con las dependencias fijadas en `requirements.txt`.
-`python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/vivienda_nueva.ipynb`
+
+```bash
+python -m nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 notebooks/vivienda_nueva.ipynb
+```
